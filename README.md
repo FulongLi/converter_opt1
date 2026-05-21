@@ -1,6 +1,6 @@
 # Cardiff buck VSI optimisation (Python)
 
-Python reimplementation of the Cardiff University / CSAC **single-phase buck-type VSI** workflow: multi-objective **volume vs. loss** exploration and a small **neural-network surrogate**, matching the intent of the MATLAB scripts `Step1`–`Step3` in the original project folder.
+Python reimplementation of the **single-phase buck-type VSI** workflow: multi-objective **volume vs. loss** exploration and a small **neural-network surrogate**, matching the intent of the MATLAB scripts `Step1`–`Step3` in the original project folder.
 
 The original repository shipped CVX/SeDuMi but **did not include** `cvx_initialization.m` / `cvx_optimization.m` or `netdata.mat`. Here, **physics-based loss and volume models** are written explicitly in `physics.py`, and the Pareto sweep uses **weighted-sum scalarisation** solved with **SciPy** (`SLSQP`) on the same decision variables used for the ANN in MATLAB (`A_sw`, `f_sw`, `I_ripple`, `ΔT_j`).
 
